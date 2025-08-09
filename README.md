@@ -10,3 +10,4 @@
 
 ### Creational Design Pattern
 - [Strategy](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/strategy)
+- [Observer](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/observer)
