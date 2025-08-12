@@ -7,8 +7,11 @@
 - [Singleton](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/singleton)
 - [Builder](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/builder)
 
+### Structural Design Pattern
+- [Proxy](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/proxy)
 
-### Creational Design Pattern
+
+### Behavioral Design Pattern
 - [Strategy](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/strategy)
 - [Observer](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/observer)
 - [Chain of Responsibility](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/chain_of_responsibility)
