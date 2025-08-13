@@ -8,6 +8,7 @@
 - [Builder](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/builder)
 
 ### Structural Design Pattern
+- [Adaptor](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/adaptor)
 - [Proxy](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/proxy)
 - [Facade](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/facade)
 
