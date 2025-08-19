@@ -13,6 +13,7 @@
 - [Facade](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/facade)
 - [Bridge](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/bridge)
 - [Decorator](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/decorator)
+- [Composite](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/composite)
 
 
 ### Behavioral Design Pattern
