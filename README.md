@@ -26,3 +26,4 @@
 - [Template](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/template)
 - [Mediator](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/mediator)
 - [Memento](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/memento)
+- [Command](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/command)
