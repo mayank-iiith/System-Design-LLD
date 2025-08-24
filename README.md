@@ -14,6 +14,7 @@
 - [Bridge](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/bridge)
 - [Decorator](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/decorator)
 - [Composite](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/composite)
+- [Flyweight](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/flyweight)
 
 
 ### Behavioral Design Pattern
