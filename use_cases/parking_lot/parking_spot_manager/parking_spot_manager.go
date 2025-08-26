@@ -12,9 +12,9 @@ import (
 type ParkingSpotManager interface {
 	AddParkingSpot(int)
 	RemoveParkingSpot(int)
-	ParkVehicle(vehicle.Vehicle) error
-	EmptyParkingSlot(int) error
-	findParkingSpot() (parkingspot.ParkingSpot, error)
+	ParkVehicle(vehicle.Vehicle) (parkingspot.ParkingSpot, error)
+	EmptyParkingSpot(int) error
+	FindParkingSpot() (parkingspot.ParkingSpot, error)
 }
 
 type baseParkingSpotManager struct {
@@ -30,16 +30,20 @@ func (m *baseParkingSpotManager) RemoveParkingSpot(spotNumber int) {
 }
 
 // ParkVehicle implements ParkingSpotManager.
-func (m *baseParkingSpotManager) ParkVehicle(v vehicle.Vehicle) error {
-	ps, err := m.findParkingSpot()
+func (m *baseParkingSpotManager) ParkVehicle(v vehicle.Vehicle) (parkingspot.ParkingSpot, error) {
+	ps, err := m.FindParkingSpot()
 	if err != nil {
-		return err
+		return nil, err
 	}
-	return ps.ParkVehicle(v)
+	err = ps.ParkVehicle(v)
+	if err != nil {
+		return nil, err
+	}
+	return ps, nil
 }
 
-// EmptyParkingSlot implements ParkingSpotManager.
-func (m *baseParkingSpotManager) EmptyParkingSlot(spotNumber int) error {
+// EmptyParkingSpot implements ParkingSpotManager.
+func (m *baseParkingSpotManager) EmptyParkingSpot(spotNumber int) error {
 	for _, ps := range m.parkingSpots {
 		if ps.SpotNumber() == spotNumber {
 			return ps.RemoveVehicle()
@@ -48,8 +52,8 @@ func (m *baseParkingSpotManager) EmptyParkingSlot(spotNumber int) error {
 	return fmt.Errorf("parking spot doesn't exists")
 }
 
-// findParkingSpot implements ParkingSpotManager.
-func (m *baseParkingSpotManager) findParkingSpot() (parkingspot.ParkingSpot, error) {
+// FindParkingSpot implements ParkingSpotManager.
+func (m *baseParkingSpotManager) FindParkingSpot() (parkingspot.ParkingSpot, error) {
 	for _, ps := range m.parkingSpots {
 		if ps.IsEmpty() {
 			return ps, nil

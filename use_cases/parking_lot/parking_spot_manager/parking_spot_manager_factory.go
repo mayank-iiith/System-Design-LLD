@@ -3,21 +3,20 @@ package parkingspotmanager
 import (
 	"errors"
 	parkingspot "lld/use_cases/parking_lot/parking_spot"
-	parkingspotmanager "lld/use_cases/parking_lot/parking_spot_manager"
 	"lld/use_cases/parking_lot/vehicle"
 )
 
-type parkingSpotManagerFactory struct {
-	managers map[parkingspot.ParkingSpotType]parkingspotmanager.ParkingSpotManager
+type ParkingSpotManagerFactory struct {
+	managers map[parkingspot.ParkingSpotType]ParkingSpotManager
 }
 
-func NewParkingSpotManagerFactory() *parkingSpotManagerFactory {
-	return &parkingSpotManagerFactory{
-		managers: make(map[parkingspot.ParkingSpotType]parkingspotmanager.ParkingSpotManager),
+func NewParkingSpotManagerFactory() *ParkingSpotManagerFactory {
+	return &ParkingSpotManagerFactory{
+		managers: make(map[parkingspot.ParkingSpotType]ParkingSpotManager),
 	}
 }
 
-func (f *parkingSpotManagerFactory) GetParkingSpotManager(vt vehicle.VehicleType) (parkingspotmanager.ParkingSpotManager, error) {
+func (f *ParkingSpotManagerFactory) GetParkingSpotManager(vt vehicle.VehicleType) (ParkingSpotManager, error) {
 	pt, err := getCompatibleParkingSpotType(vt)
 	if err != nil {
 		return nil, err
@@ -28,7 +27,7 @@ func (f *parkingSpotManagerFactory) GetParkingSpotManager(vt vehicle.VehicleType
 		mgr, _ = newParkingSpotManager(pt)
 		f.managers[pt] = mgr
 	}
-	return mgr
+	return mgr, nil
 }
 
 func getCompatibleParkingSpotType(vt vehicle.VehicleType) (parkingspot.ParkingSpotType, error) {
