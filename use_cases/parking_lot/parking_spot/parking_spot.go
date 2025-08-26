@@ -15,6 +15,7 @@ const (
 )
 
 type ParkingSpot interface {
+	SpotNumber() int
 	IsEmpty() bool
 	ParkVehicle(vehicle.Vehicle) error
 	RemoveVehicle() error
@@ -25,6 +26,10 @@ type baseParkingSpot struct {
 	spotNumber      int
 	vehicle         vehicle.Vehicle
 	pricingStrategy pricingstrategy.PricingStrategy
+}
+
+func (ps *baseParkingSpot) SpotNumber() int {
+	return ps.spotNumber
 }
 
 func (ps *baseParkingSpot) IsEmpty() bool {
