@@ -9,7 +9,8 @@ type HeavyFourWheelerParkingSpotManager struct {
 	*baseParkingSpotManager
 }
 
-func NewHeavyFourWheelerParkingSpotManager(spotNumber int, ps pricingstrategy.PricingStrategy) *HeavyFourWheelerParkingSpotManager {
+func NewHeavyFourWheelerParkingSpotManager() *HeavyFourWheelerParkingSpotManager {
+	ps, _ := pricingstrategy.NewParkingStrategy(pricingstrategy.FixedHourlyPricingStrategyType)
 	return &HeavyFourWheelerParkingSpotManager{
 		&baseParkingSpotManager{
 			parkingSpots:    make([]parkingspot.ParkingSpot, 0),

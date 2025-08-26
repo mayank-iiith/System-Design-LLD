@@ -12,6 +12,7 @@ const (
 	TwoWheelerParkingSpotType ParkingSpotType = iota + 1
 	LightFourWheelerParkingSpotType
 	HeavyFourWheelerParkingSpotType
+	UnknownParkingSpotType
 )
 
 type ParkingSpot interface {

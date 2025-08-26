@@ -9,7 +9,8 @@ type LightFourWheelerParkingSpotManager struct {
 	*baseParkingSpotManager
 }
 
-func NewLightFourWheelerParkingSpotManager(spotNumber int, ps pricingstrategy.PricingStrategy) *LightFourWheelerParkingSpotManager {
+func NewLightFourWheelerParkingSpotManager() *LightFourWheelerParkingSpotManager {
+	ps, _ := pricingstrategy.NewParkingStrategy(pricingstrategy.DynamicHourlyPricingStrategyType)
 	return &LightFourWheelerParkingSpotManager{
 		&baseParkingSpotManager{
 			parkingSpots:    make([]parkingspot.ParkingSpot, 0),
