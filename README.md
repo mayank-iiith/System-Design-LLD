@@ -1,13 +1,15 @@
 # System-Design-LLD
 
-### Creational Design Pattern
+## Design Patterns
+
+#### Creational Design Pattern
 - [Factory Method](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/factory_method)
 - [Abstract Factory Method](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/abstract_factory_method)
 - [Prototype](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/prototype)
 - [Singleton](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/singleton)
 - [Builder](https://github.com/mayank-iiith/System-Design-LLD/tree/main/creational_design_patterns/builder)
 
-### Structural Design Pattern
+#### Structural Design Pattern
 - [Adaptor](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/adaptor)
 - [Proxy](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/proxy)
 - [Facade](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/facade)
@@ -17,7 +19,7 @@
 - [Flyweight](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/flyweight)
 
 
-### Behavioral Design Pattern
+#### Behavioral Design Pattern
 - [Strategy](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/strategy)
 - [State](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/state)
 - [Observer](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/observer)
@@ -28,3 +30,7 @@
 - [Memento](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/memento)
 - [Command](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/command)
 - [Visitor](https://github.com/mayank-iiith/System-Design-LLD/tree/main/behavioral_design_pattens/visitor)
+
+
+## Use Cases
+- [Parking Lot](https://github.com/mayank-iiith/System-Design-LLD/tree/main/use_cases/parking_lot)
