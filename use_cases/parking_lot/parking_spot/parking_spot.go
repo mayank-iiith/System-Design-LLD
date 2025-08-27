@@ -21,6 +21,7 @@ type ParkingSpot interface {
 	ParkVehicle(vehicle.Vehicle) error
 	RemoveVehicle() error
 	GetPricingStrategy() pricingstrategy.PricingStrategy
+	GetType() ParkingSpotType
 }
 
 type baseParkingSpot struct {

@@ -16,3 +16,8 @@ func NewHeavyFourWheelerParkingSpot(spotNumber int, ps pricingstrategy.PricingSt
 }
 
 var _ ParkingSpot = (*HeavyFourWheelerParkingSpot)(nil)
+
+// GetType implements ParkingSpot.
+func (t *HeavyFourWheelerParkingSpot) GetType() ParkingSpotType {
+	return HeavyFourWheelerParkingSpotType
+}

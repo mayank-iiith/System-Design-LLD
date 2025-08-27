@@ -30,6 +30,16 @@ func (f *ParkingSpotManagerFactory) GetParkingSpotManager(vt vehicle.VehicleType
 	return mgr, nil
 }
 
+func (f *ParkingSpotManagerFactory) AddParkingSpot(pt parkingspot.ParkingSpotType, spotNumber int) {
+	mgr, ok := f.managers[pt]
+	if !ok {
+		mgr, _ = newParkingSpotManager(pt)
+		f.managers[pt] = mgr
+	}
+
+	mgr.AddParkingSpot(spotNumber)
+}
+
 func getCompatibleParkingSpotType(vt vehicle.VehicleType) (parkingspot.ParkingSpotType, error) {
 	switch vt {
 	case vehicle.VehicleTypeBike:

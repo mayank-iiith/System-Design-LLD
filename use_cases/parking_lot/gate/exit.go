@@ -7,10 +7,10 @@ import (
 )
 
 type Exit struct {
-	parkingSpotManagerFactory parkingspotmanager.ParkingSpotManagerFactory
+	parkingSpotManagerFactory *parkingspotmanager.ParkingSpotManagerFactory
 }
 
-func NewExit(f parkingspotmanager.ParkingSpotManagerFactory) *Exit {
+func NewExit(f *parkingspotmanager.ParkingSpotManagerFactory) *Exit {
 	return &Exit{
 		parkingSpotManagerFactory: f,
 	}

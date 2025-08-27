@@ -7,10 +7,10 @@ import (
 )
 
 type Entrance struct {
-	parkingSpotManagerFactory parkingspotmanager.ParkingSpotManagerFactory
+	parkingSpotManagerFactory *parkingspotmanager.ParkingSpotManagerFactory
 }
 
-func NewEntrance(f parkingspotmanager.ParkingSpotManagerFactory) *Entrance {
+func NewEntrance(f *parkingspotmanager.ParkingSpotManagerFactory) *Entrance {
 	return &Entrance{
 		parkingSpotManagerFactory: f,
 	}
