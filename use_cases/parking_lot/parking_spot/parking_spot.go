@@ -1,0 +1,59 @@
+package parkingspot
+
+import (
+	"errors"
+	pricingstrategy "lld/use_cases/parking_lot/pricing_strategy"
+	"lld/use_cases/parking_lot/vehicle"
+)
+
+type ParkingSpotType int
+
+const (
+	TwoWheelerParkingSpotType ParkingSpotType = iota + 1
+	LightFourWheelerParkingSpotType
+	HeavyFourWheelerParkingSpotType
+	UnknownParkingSpotType
+)
+
+type ParkingSpot interface {
+	SpotNumber() int
+	IsEmpty() bool
+	ParkVehicle(vehicle.Vehicle) error
+	RemoveVehicle() error
+	GetPricingStrategy() pricingstrategy.PricingStrategy
+	GetType() ParkingSpotType
+}
+
+type baseParkingSpot struct {
+	spotNumber      int
+	vehicle         vehicle.Vehicle
+	pricingStrategy pricingstrategy.PricingStrategy
+}
+
+func (ps *baseParkingSpot) SpotNumber() int {
+	return ps.spotNumber
+}
+
+func (ps *baseParkingSpot) IsEmpty() bool {
+	return ps.vehicle == nil
+}
+
+func (ps *baseParkingSpot) ParkVehicle(v vehicle.Vehicle) error {
+	if !ps.IsEmpty() {
+		return errors.New("parking spot is already occupied")
+	}
+	ps.vehicle = v
+	return nil
+}
+
+func (ps *baseParkingSpot) RemoveVehicle() error {
+	if ps.IsEmpty() {
+		return errors.New("parking spot is already empty")
+	}
+	ps.vehicle = nil
+	return nil
+}
+
+func (ps *baseParkingSpot) GetPricingStrategy() pricingstrategy.PricingStrategy {
+	return ps.pricingStrategy
+}
