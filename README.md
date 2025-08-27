@@ -34,3 +34,4 @@
 
 ## Use Cases
 - [Parking Lot](https://github.com/mayank-iiith/System-Design-LLD/tree/main/use_cases/parking_lot)
+- [Elevator System](https://github.com/mayank-iiith/System-Design-LLD/tree/main/use_cases/elevator_system)
