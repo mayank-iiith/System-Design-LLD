@@ -12,17 +12,17 @@ var (
 )
 
 type Board struct {
-	cells  []*cell.Cell
-	isOver bool
+	cells []*cell.Cell
+	size  int
 }
 
-func NewBoard(countOfCells int, snakes, ladders [][]int) (*Board, error) {
+func NewBoard(size int, snakes, ladders [][]int) (*Board, error) {
 	board := &Board{
-		cells:  make([]*cell.Cell, countOfCells),
-		isOver: false,
+		size:  size,
+		cells: make([]*cell.Cell, size),
 	}
 
-	for i := 0; i < countOfCells; i++ {
+	for i := 0; i < size; i++ {
 		board.cells[i] = cell.NewCell(i + 1)
 	}
 
@@ -108,32 +108,19 @@ func (b *Board) GetCell(pos int) (*cell.Cell, error) {
 	return b.cells[pos-1], nil
 }
 
-func (b *Board) Move(currentPosition, move int) (int, error) {
-	nextPosition := currentPosition + move
+// Move returns next position after roll, if anything moved, is player won
+func (b *Board) Move(currentPosition, roll int) (int, bool, bool) {
+	nextPosition := currentPosition + roll
 	if !b.IsValidPosition(nextPosition) {
-		return 0, ErrInvalidPosition
+		return currentPosition, false, false
 	}
 	for {
-		c, err := b.GetCell(nextPosition)
-		if err != nil {
-			return 0, err
-		}
+		c, _ := b.GetCell(nextPosition)
 		if !c.HasSnakeOrLadder() {
 			break
 		}
-		nextPosition, err = c.GetTo()
-		if err != nil {
-			return 0, err
-		}
+		nextPosition = c.GetTo()
 	}
 
-	if nextPosition == len(b.cells) {
-		b.isOver = true
-	}
-
-	return nextPosition, nil
-}
-
-func (b *Board) IsOver() bool {
-	return b.isOver
+	return nextPosition, true, nextPosition == len(b.cells)
 }

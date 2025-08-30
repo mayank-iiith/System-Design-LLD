@@ -9,13 +9,10 @@ type Snake struct {
 
 func NewSnake(from, to int) (SnakeOrLadder, error) {
 	if to >= from {
-		return nil, errors.New("invalid entry: to should be less than from")
-	}
+		return nil, errors.New("invalid snake: tail >= head")
 
-	return &Snake{
-		from: from,
-		to:   to,
-	}, nil
+	}
+	return &Snake{from, to}, nil
 }
 
 // GetTo implements SnakeOrLadder.

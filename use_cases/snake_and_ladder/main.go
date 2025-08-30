@@ -6,19 +6,20 @@ import (
 )
 
 func main() {
-	g, err := createGame()
+	countOfCells, snakes, ladders, playerNames := readInput()
+	g, err := game.NewGame(countOfCells, snakes, ladders, playerNames)
 	if err != nil {
 		log.Fatalf("create game failed: %+v", err)
 	}
 
 	for !g.IsOver() {
-		if err = g.RollDiceAndMove(); err != nil {
+		if err = g.PlayTurn(); err != nil {
 			log.Fatal(err)
 		}
 	}
 }
 
-func createGame() (*game.Game, error) {
+func readInput() (int, [][]int, [][]int, []string) {
 	countOfCells := 100
 	snakes := [][]int{
 		{62, 5},
@@ -48,5 +49,5 @@ func createGame() (*game.Game, error) {
 		"Gaurav",
 		"Sagar",
 	}
-	return game.NewGame(countOfCells, snakes, ladders, playerNames)
+	return countOfCells, snakes, ladders, playerNames
 }

@@ -1,7 +1,6 @@
 package cell
 
 import (
-	"errors"
 	"fmt"
 	snakeorladder "lld/use_cases/snake_and_ladder/snake_or_ladder"
 )
@@ -33,9 +32,9 @@ func (c *Cell) SetSnakeOrLadder(snakeOrLadder snakeorladder.SnakeOrLadder) error
 	return nil
 }
 
-func (c *Cell) GetTo() (int, error) {
-	if !c.HasSnakeOrLadder() {
-		return 0, errors.New("no snake or ladder at this cell")
+func (c *Cell) GetTo() int {
+	if c.HasSnakeOrLadder() {
+		return c.snakeOrLadder.GetTo()
 	}
-	return c.snakeOrLadder.GetTo(), nil
+	return c.num
 }

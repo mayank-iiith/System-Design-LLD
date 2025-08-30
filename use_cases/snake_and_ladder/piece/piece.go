@@ -1,19 +1,19 @@
 package piece
 
 type Piece struct {
-	currentPosition int
+	position int
 }
 
 func NewPiece() *Piece {
 	return &Piece{
-		currentPosition: 0,
+		position: 0,
 	}
 }
 
-func (p *Piece) GetCurrentPosition() int {
-	return p.currentPosition
+func (p *Piece) Position() int {
+	return p.position
 }
 
-func (p *Piece) SetNewPosition(position int) {
-	p.currentPosition = position
+func (p *Piece) SetPosition(position int) {
+	p.position = position
 }
