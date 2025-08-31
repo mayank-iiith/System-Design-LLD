@@ -35,3 +35,4 @@
 ## Use Cases
 - [Parking Lot](https://github.com/mayank-iiith/System-Design-LLD/tree/main/use_cases/parking_lot)
 - [Snake and Ladder](https://github.com/mayank-iiith/System-Design-LLD/tree/main/use_cases/snake_and_ladder)
+- [Tic-Tac-Toe](https://github.com/mayank-iiith/System-Design-LLD/tree/main/use_cases/tic_tac_toe)
